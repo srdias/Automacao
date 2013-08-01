@@ -1,0 +1,6 @@
+C:\Fontes\SocketServer\SocketServer\bin\Debug\SocketServer.exe
+C:\Fontes\SocketServer\SocketServer\bin\Debug\SocketServer.pdb
+C:\Fontes\SocketServer\SocketServer\obj\x86\Debug\SocketServer.exe
+C:\Fontes\SocketServer\SocketServer\obj\x86\Debug\SocketServer.pdb
+C:\Fontes\SocketServer\SocketServer\bin\Debug\MySql.Data.dll
+C:\Fontes\SocketServer\SocketServer\obj\x86\Debug\SocketServer.csprojResolveAssemblyReference.cache

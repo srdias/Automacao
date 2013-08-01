@@ -1,0 +1,8 @@
+C:\GitRepWork\GitRep2\CS_SerialCom\SerialComunicacao\SerialComunicacao\obj\Debug\ResolveAssemblyReference.cache
+C:\GitRepWork\GitRep2\CS_SerialCom\SerialComunicacao\SerialComunicacao\obj\Debug\SerialComunicacao.MainForm.resources
+C:\GitRepWork\GitRep2\CS_SerialCom\SerialComunicacao\SerialComunicacao\obj\Debug\GenerateResource.read.1.tlog
+C:\GitRepWork\GitRep2\CS_SerialCom\SerialComunicacao\SerialComunicacao\obj\Debug\GenerateResource.write.1.tlog
+C:\GitRepWork\GitRep2\CS_SerialCom\SerialComunicacao\SerialComunicacao\bin\Debug\SerialComunicacao.exe
+C:\GitRepWork\GitRep2\CS_SerialCom\SerialComunicacao\SerialComunicacao\bin\Debug\SerialComunicacao.pdb
+C:\GitRepWork\GitRep2\CS_SerialCom\SerialComunicacao\SerialComunicacao\obj\Debug\SerialComunicacao.exe
+C:\GitRepWork\GitRep2\CS_SerialCom\SerialComunicacao\SerialComunicacao\obj\Debug\SerialComunicacao.pdb
