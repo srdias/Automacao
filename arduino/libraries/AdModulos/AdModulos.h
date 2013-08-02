@@ -65,7 +65,8 @@ class Modulo{
 
 		//short publicarValor(short numVar, short valor);
 		
-		short publicar();
+		void publicar();
+		void publicarDebug();
 		virtual short acao();
 		short live();
 		
