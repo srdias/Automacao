@@ -21,26 +21,16 @@ static int freeRam () {
 
 void setup(){
   Serial.begin(9600);
-  Serial.println("--backSoon--");
-  Serial.println("Passo 1.");
-  
-  Serial.print("Free ram:");
-  Serial.println(freeRam());
+  Serial.println("\n[backSoon]");
   
   if (ether.begin(sizeof Ethernet::buffer, mymac) == 0) Serial.println( "Failed to access Ethernet controller");
-  
-  Serial.println("Passo 2.");
-  
   if (!ether.dhcpSetup()) Serial.println("DHCP failed");
 
-  Serial.println("Passo 3.");
+  Serial.println("Iniciado...");
 
   ether.printIp("IP:  ", ether.myip);
   ether.printIp("GW:  ", ether.gwip);  
   ether.printIp("DNS: ", ether.dnsip);  
-
-  Serial.println("Inicializacao concluida.");
-
 }
 
 void loop(){
@@ -51,11 +41,11 @@ void loop(){
   if (pos) {
     bfill = ether.tcpOffset();
     char* data = (char *) Ethernet::buffer + pos;
-    
+/*    
     Serial.print("Data: [");
     Serial.print(data);
     Serial.println("] ");
-
+*/
     bfill.emit_p(PSTR("<html>"));
     bfill.emit_p(PSTR("<head>"));
     bfill.emit_p(PSTR("<title>Pagina de teste</title>"));
