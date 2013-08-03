@@ -68,6 +68,7 @@ class Modulo{
 		
 		void publicar();
 		void publicarDebug();
+		void publicarString(char * asString);
 		virtual short acao();
 		short live();
 		

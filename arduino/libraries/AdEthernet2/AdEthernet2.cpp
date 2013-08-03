@@ -2,93 +2,50 @@
 //-- Classe para uso do modulo Enc28j60
 
 #include <Arduino.h>
-//#include <AdModulos.h>
-#include "AdEthernet2.h"
+#include <AdModulos.h>
+#include <AdEthernet2.h>
 
 extern int freeRam ();
-extern char bufferSerial[];
 
-void AdEthernet2::setup(/*AdSerial * aAdSerial*/){
-//	this->iAdSerial = aAdSerial;
-	e.setup(mac, ip, port);
+// ethernet mac address - must be unique on your network
+static byte mymac[] = { 0x74,0x69,0x69,0x2D,0x30,0x31 };
+
+byte Ethernet::buffer[1024]; // tcp/ip send and receive buffer
+static BufferFiller bfill;  // used as cursor while filling the buffer
+
+void AdEthernet2::setup(){
+
+	Serial.println("Enc28j60 Iniciando...");
+
+	if (ether.begin(sizeof Ethernet::buffer, mymac) == 0) Serial.println( "Failed to access Ethernet controller");
+	if (!ether.dhcpSetup()) Serial.println("DHCP failed");
+
+	Serial.println("Enc28j60 Iniciado.");
+
+	ether.printIp("IP:  ", ether.myip);
+	ether.printIp("GW:  ", ether.gwip);  
+	ether.printIp("DNS: ", ether.dnsip);  
+	
+	Serial.println("Enc28j60 ok.");
 };
 
-void AdEthernet2::atenderRequisicoes(){
+void AdEthernet2::atenderRequisicoes(AdModulosContainer * aAdModulosContainer){
 
-	char* params;
-	
-	if (params = e.serviceRequest()){
-	
-		e.print("<H1>Web Remote</H1>");
-		e.print("<A HREF='?cmd=off'>Turn off</A>");
+	word len = ether.packetReceive();
+	word pos = ether.packetLoop(len);
 
-		e.print("<BR>");
-		e.print("<BR>");
-		e.print("Dados recebidos http: ");
-		e.print(params);
-		Serial.print(params);
+	if (pos) {
+		bfill = ether.tcpOffset();
+		char* data = (char *) Ethernet::buffer + pos;
 
-		e.print("<BR>");
-		e.print("<BR>");
-		e.print("Dados recebidos na serial: ");
-		e.print(bufferSerial);
+		bfill.emit_p(PSTR("<html>"));
 		
-		e.print("<BR>");
-		e.print("<BR>");
-		e.print("freeRam=");
-		e.print(freeRam ());
+		for(short i=0; i<aAdModulosContainer->qtdeItens; i++){
+			//aAdModulosContainer->iModulos[i]->live();
+		}
 
-
-		e.respond();
-	}
+		ether.httpServerReply(bfill.position()); // send web page data
+		
+	};
 
 };
-/*
-void AdSerial::setup(int aModo){
-
-	this->modo=aModo;
-	Serial.begin(9600);   
-	Serial.setTimeout(100);
-
-	this->printDebug("Iniciando arduino...");
-	this->printDebug();
-	
-	return;
-};
-
-void AdSerial::printDebug(){
-	printDebug("");
-	return;
-};
-
-void AdSerial::printDebug(char * texto){
-
-	if(texto[0]){
-		Serial.print("SERIAL_DEBUG: ");
-		Serial.print(texto);
-	}else{
-		Serial.println();
-	}
-	
-	return;
-};
-
-void AdSerial::print(char * texto){
-	Serial.print(texto);
-	return;
-};
-
-void AdSerial::readBufferSerial(){
-	
-	int liQtdeLidoTotal=0;
-    if(Serial.available()){
-		int qtdeBytesLidos=Serial.readBytes(bufferSerial, MAX_BUFFER_SERIAL -1);
-		bufferSerial[qtdeBytesLidos]=0;
-		this->printDebug(bufferSerial);
-		this->printDebug();
-    }
-
-	return;
-};
-
-*/

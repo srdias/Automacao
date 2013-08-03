@@ -13,22 +13,7 @@ short Modulo::setTipoModulo(short aTipoModulo){
 	
 	return 1;
 };
-/*
-short Modulo::publicarValor(short numVar, short valor){
-	
-	Serial.print(iRegistro);
-	Serial.print(";");
-	Serial.print(iTipoModulo);
-	Serial.print(";");
-	Serial.print(numVar);
-	Serial.print(";");
-	Serial.print(valor);
-	Serial.print("|");
-	Serial.println();
-	
-	return 1;
-}; 
-*/
+
 
 void convBase32(int valor, char * retorno){
 	short fisrt=valor/32;
@@ -70,17 +55,20 @@ void Modulo::publicarDebug(){
 	delete lsOut;
 };
 
-void Modulo::publicar(){
-	char * lsOut = new char[this->iVarQtde*2+4+1];
-	
-	lsOut[0]=0;
-	addBase32ToString(lsOut,iRegistro);
-	addBase32ToString(lsOut,iTipoModulo);
+void Modulo::publicarString(char * asString){
+	asString[0]=0;
+	addBase32ToString(asString,iRegistro);
+	addBase32ToString(asString,iTipoModulo);
 	
 	for(short i=0;i<this->iVarQtde;i++){
-		addBase32ToString(lsOut,this->iVariaveis[i]);
+		addBase32ToString(asString,this->iVariaveis[i]);
 	};
-	strcat(lsOut,"|");
+	strcat(asString,"|");
+}
+
+void Modulo::publicar(){
+	char * lsOut = new char[this->iVarQtde*2+4+1];
+	publicarString(lsOut);
 	Serial.print(lsOut);
 	delete lsOut;
 };
@@ -197,10 +185,6 @@ void AdModulosContainer::processarComandos(){
 		char lsTexto[25];
 		short qtdeBytesLidos=Serial.readBytesUntil('|', lsTexto, 25);
 		lsTexto[qtdeBytesLidos]=0;
-/*		Serial.print("lsTexto:'");
-		Serial.print(lsTexto);
-		Serial.print("'");
-		Serial.println();*/
 		parseChangeVar(lsTexto);
     }
 	
@@ -229,16 +213,7 @@ void AdModulosContainer::parseChangeVar(char * comando){
 		if(parte==3) variavel=variavel*10+numero;
 		if(parte==4) valor=valor*10+numero;
 	}
-/*	
-	Serial.print("Resultado:");
-	Serial.print(" acao:"); Serial.print(acao);
-	Serial.print(" controle:"); Serial.print(controle);
-	Serial.print(" modulo:"); Serial.print(modulo);
-	Serial.print(" sequencial:"); Serial.print(sequencial);
-	Serial.print(" variavel:"); Serial.print(variavel);
-	Serial.print(" valor:"); Serial.print(valor);
-	Serial.println();
-*/	
+
 	short validacao=(modulo>=0 && modulo<=1024) &&
 	              (controle>=0 && controle<=1024) &&
 	              (sequencial>=0 && sequencial<=1024) &&
