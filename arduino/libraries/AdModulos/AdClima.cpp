@@ -201,12 +201,6 @@ short Tempo::acao(){
 	return 1;
 };
 
-#define MATERNIDADE_LAMPADA_STATUS 0
-#define MATERNIDADE_LUMINOSIDADE_MINIMA 1
-#define MATERNIDADE_LUMINOSIDADE_MAXIMA 2
-#define MATERNIDADE_QTDE_VARIAVEIS 2
-
-
 BancadaMaternidade::BancadaMaternidade(short aRegistro){
 	this->setRegistro(aRegistro);
 	this->setTipoModulo(TIPO_MODULO_MATERNIDADE);
@@ -219,10 +213,18 @@ BancadaMaternidade::BancadaMaternidade(short aRegistro){
 };
 short BancadaMaternidade::acao(){
 
-	
+	return 1;
 
 };
 
 short BancadaMaternidade::triggerAlterarVariavel(short varNum, short varNovoValor, short varAnteriorValor){
 	return 1;
+};
+
+void BancadaMaternidade::setPino(short aPinoReleLampada){
+	this->iPinoReleLampada.setPino(aPinoReleLampada);
+};
+
+void BancadaMaternidade::setClima(Clima * aClima){
+	this->iClima = aClima;
 };

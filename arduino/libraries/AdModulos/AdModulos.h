@@ -178,8 +178,12 @@ class AdModulosContainer{
 #define MATERNIDADE_QTDE_VARIAVEIS 2
 
 class BancadaMaternidade :public Modulo{
+	Pino iPinoReleLampada;
+	Clima * iClima;
 	public:
 		BancadaMaternidade(short aRegistro);
+		void setPino(short aPinoReleLampada);
+		void setClima(Clima * aClima);
 		short acao();
 		short triggerAlterarVariavel(short varNum, short varNovoValor, short varAnteriorValor);
 };

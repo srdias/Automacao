@@ -5,6 +5,7 @@ AdModulosContainer iAdModulosContainer;
 Bancadas iBancada(1);
 Clima iClima(2);
 Tempo iTempo(3);
+BancadaMaternidade iMaternidade(4);
 
 
 int freeRam () {
@@ -23,9 +24,13 @@ void setup() {
   iBancada.setPinos(PINO_A1,PINO_A2,PINO_D3);
   iClima.setPinos(PINO_D9,PINO_A0);
   
+  iMaternidade.setPino(PINO_D4);
+  iMaternidade.setClima(&iClima);
+  
   iAdModulosContainer.add(&iBancada);
   iAdModulosContainer.add(&iClima);
   iAdModulosContainer.add(&iTempo);
+  iAdModulosContainer.add(&iMaternidade);
 
   Serial.print("freeRam=");
   Serial.println(freeRam ());
