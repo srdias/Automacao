@@ -28,6 +28,7 @@
 #define TIPO_MODULO_BANCADA 1
 #define TIPO_MODULO_CLIMA   2
 #define TIPO_MODULO_TEMPO   3
+#define TIPO_MODULO_MATERNIDADE 4
 
 #define VARIAVEL_QTDE_MEDIA  30
 #define DELAY_LOOP_ARDUINO 1000
@@ -169,6 +170,18 @@ class AdModulosContainer{
 		void processarComandos();
 		void parseChangeVar(char * comando);
 		
+};
+
+#define MATERNIDADE_LAMPADA_STATUS 0
+#define MATERNIDADE_LUMINOSIDADE_MINIMA 1
+#define MATERNIDADE_LUMINOSIDADE_MAXIMA 2
+#define MATERNIDADE_QTDE_VARIAVEIS 2
+
+class BancadaMaternidade :public Modulo{
+	public:
+		BancadaMaternidade(short aRegistro);
+		short acao();
+		short triggerAlterarVariavel(short varNum, short varNovoValor, short varAnteriorValor);
 };
 
 
