@@ -166,3 +166,94 @@ short Pino::digWrite(short aValor){
 };
 
 
+
+#define null 0
+AdModulosContainer::AdModulosContainer(){
+	qtdeItens=0;
+	for(short i=0; i<MODULO_CONTAINER_QTDE; i++){
+		iModulos[i]=null;
+	}
+};
+
+
+void AdModulosContainer::add(Modulo *moduloRef){
+
+	iModulos[qtdeItens]=moduloRef;
+	qtdeItens++;
+
+	
+};
+
+void AdModulosContainer::liveAll(){
+	for(short i=0; i<qtdeItens; i++){
+		iModulos[i]->live();
+	}
+	Serial.println();
+};
+
+void AdModulosContainer::processarComandos(){
+
+    while(Serial.available()){
+		char lsTexto[25];
+		short qtdeBytesLidos=Serial.readBytesUntil('|', lsTexto, 25);
+		lsTexto[qtdeBytesLidos]=0;
+/*		Serial.print("lsTexto:'");
+		Serial.print(lsTexto);
+		Serial.print("'");
+		Serial.println();*/
+		parseChangeVar(lsTexto);
+    }
+	
+}
+
+void AdModulosContainer::parseChangeVar(char * comando){
+
+	short parte=0;
+	short numero=0;
+	short modulo=0;
+	short sequencial=0;
+	short variavel=0;
+	short valor=0;
+	short controle=0;
+	char acao;
+	for(short i=0; comando[i]; i++){
+		if(comando[i]==';'){
+			parte++;
+			continue;
+		}
+		numero=comando[i]-48;
+		
+		if(parte==0) acao=comando[i];
+		if(parte==1) modulo=(modulo*10+numero);
+		if(parte==2) sequencial=sequencial*10+numero;
+		if(parte==3) variavel=variavel*10+numero;
+		if(parte==4) valor=valor*10+numero;
+	}
+/*	
+	Serial.print("Resultado:");
+	Serial.print(" acao:"); Serial.print(acao);
+	Serial.print(" controle:"); Serial.print(controle);
+	Serial.print(" modulo:"); Serial.print(modulo);
+	Serial.print(" sequencial:"); Serial.print(sequencial);
+	Serial.print(" variavel:"); Serial.print(variavel);
+	Serial.print(" valor:"); Serial.print(valor);
+	Serial.println();
+*/	
+	short validacao=(modulo>=0 && modulo<=1024) &&
+	              (controle>=0 && controle<=1024) &&
+	              (sequencial>=0 && sequencial<=1024) &&
+	              (variavel>=0 && variavel<=1024) &&
+	              (valor>=0 && valor<=1024) &&
+	              (acao=='a') &&
+				  (parte==4);
+	
+	if( validacao ){
+		for(short i=0; i<qtdeItens; i++){
+			if( (iModulos[i]->iTipoModulo == modulo) &&
+				(iModulos[i]->iRegistro == sequencial) ){
+				iModulos[i]->varSetValor(variavel, valor);
+				break;
+			}
+		}
+	}
+}
