@@ -38,13 +38,15 @@ void AdEthernet2::atenderRequisicoes(AdModulosContainer * aAdModulosContainer){
 		bfill = ether.tcpOffset();
 		char* data = (char *) Ethernet::buffer + pos;
 
-		
-		char lsString[100];
+		/*
 		for(short i=0; i<aAdModulosContainer->qtdeItens; i++){
 			aAdModulosContainer->iModulos[i]->publicarString(lsString);
 			bfill.emit_p(lsString);
 			bfill.emit_p("\r");
 		}
+		*/
+		bfill.emit_p(PSTR("Teste: $S ; "), lsString);
+		bfill.emit_p("\r");
 		bfill.emit_p(".");
 
 		ether.httpServerReply(bfill.position()); // send web page data
