@@ -38,17 +38,18 @@ void AdEthernet2::atenderRequisicoes(AdModulosContainer * aAdModulosContainer){
 		bfill = ether.tcpOffset();
 		char* data = (char *) Ethernet::buffer + pos;
 
-		char lsString[100];
-		/*
+		char lsString[30];
+		
+		Serial.print("freeRam=");
+		Serial.println(freeRam ());
+
+		bfill.emit_p(PSTR("["));
 		for(short i=0; i<aAdModulosContainer->qtdeItens; i++){
 			aAdModulosContainer->iModulos[i]->publicarString(lsString);
-			bfill.emit_p(lsString);
-			bfill.emit_p("\r");
+			bfill.emit_p(PSTR("v:$S"), lsString);
 		}
-		*/
-		bfill.emit_p(PSTR("Teste: $S ; "), lsString);
-		bfill.emit_p("\r");
-		bfill.emit_p(".");
+		bfill.emit_p(PSTR("]"));
+		bfill.emit_p(PSTR("FreeRam=$D"), freeRam ());
 
 		ether.httpServerReply(bfill.position()); // send web page data
 		

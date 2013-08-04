@@ -148,7 +148,7 @@ namespace ModulosSocketServer
 				
 				gravaLog( "" );
 				gravaLog( "Waiting for a connection...");
-/*
+				/*
 				Thread.Sleep(2000);
 				
 				VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis);
@@ -162,7 +162,7 @@ namespace ModulosSocketServer
 				}
 				
 				continue;
-*/
+				 */
 				Socket handler = aListener.Accept();
 				data = null;
 				
@@ -371,6 +371,51 @@ namespace ModulosSocketServer
 				textoMensagens.Items.Add(variaveisList[i].getVariavelForModulo());
 			}
 			
+		}
+		
+		void Button6Click(object sender, EventArgs e)
+		{
+			StartClient();
+		}
+		
+		public void StartClient() {
+			byte[] bytes = new byte[1024];
+
+			try {
+				IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());
+				IPAddress ipAddress = IPAddress.Parse("192.168.0.119");
+				IPEndPoint remoteEP = new IPEndPoint(ipAddress,80);
+
+				Socket sender = new Socket(AddressFamily.InterNetwork, 
+				                           SocketType.Stream, 
+				                           ProtocolType.Tcp );
+
+				try {
+					sender.Connect(remoteEP);
+
+					gravaLog("Socket connected to IP: "  + sender.RemoteEndPoint.ToString());
+
+					byte[] msg = Encoding.ASCII.GetBytes("This is a test<EOF>");
+
+					int bytesSent = sender.Send(msg);
+
+					int bytesRec = sender.Receive(bytes);
+					gravaLog("Dados recebidos: '" + Encoding.ASCII.GetString(bytes,0,bytesRec) + "'");
+
+					sender.Shutdown(SocketShutdown.Both);
+					sender.Close();
+					
+				} catch (ArgumentNullException ane) {
+					gravaLog("ArgumentNullException : " + ane.ToString());
+				} catch (SocketException se) {
+					gravaLog("SocketException : " + se.ToString());
+				} catch (Exception e) {
+					gravaLog("Unexpected exception : " + e.ToString());
+				}
+
+			} catch (Exception e) {
+				Console.WriteLine( e.ToString());
+			}
 		}
 	}
 }

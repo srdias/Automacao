@@ -54,6 +54,7 @@ namespace ModulosSocketServer
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.textoMensagens = new System.Windows.Forms.ListBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.button5 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -68,7 +69,7 @@ namespace ModulosSocketServer
 			this.label9 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.tvVariaveis = new System.Windows.Forms.TreeView();
-			this.button5 = new System.Windows.Forms.Button();
+			this.button6 = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -273,6 +274,16 @@ namespace ModulosSocketServer
 			this.tabPage2.Text = "Variáveis";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// button5
+			// 
+			this.button5.Location = new System.Drawing.Point(715, 191);
+			this.button5.Name = "button5";
+			this.button5.Size = new System.Drawing.Size(114, 23);
+			this.button5.TabIndex = 4;
+			this.button5.Text = "Localizar alterados";
+			this.button5.UseVisualStyleBackColor = true;
+			this.button5.Click += new System.EventHandler(this.Button5Click);
+			// 
 			// button4
 			// 
 			this.button4.Location = new System.Drawing.Point(632, 191);
@@ -401,21 +412,22 @@ namespace ModulosSocketServer
 			this.tvVariaveis.TabIndex = 0;
 			this.tvVariaveis.DoubleClick += new System.EventHandler(this.TvVariaveisDoubleClick);
 			// 
-			// button5
+			// button6
 			// 
-			this.button5.Location = new System.Drawing.Point(715, 191);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(114, 23);
-			this.button5.TabIndex = 4;
-			this.button5.Text = "Localizar alterados";
-			this.button5.UseVisualStyleBackColor = true;
-			this.button5.Click += new System.EventHandler(this.Button5Click);
+			this.button6.Location = new System.Drawing.Point(263, 12);
+			this.button6.Name = "button6";
+			this.button6.Size = new System.Drawing.Size(75, 82);
+			this.button6.TabIndex = 6;
+			this.button6.Text = "button6";
+			this.button6.UseVisualStyleBackColor = true;
+			this.button6.Click += new System.EventHandler(this.Button6Click);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1034, 668);
+			this.Controls.Add(this.button6);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.textStatusSocket);
@@ -436,6 +448,7 @@ namespace ModulosSocketServer
 			this.groupBox4.PerformLayout();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.TextBox textValorAlterado;
