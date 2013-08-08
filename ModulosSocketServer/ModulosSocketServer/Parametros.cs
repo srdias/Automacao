@@ -23,6 +23,88 @@ namespace ModulosSocketServer
 		{
 		}
 		
+		public int calcValorAsc(int valor){
+			int liBase;
+			int adicionar=0;
+			if(valor<48){
+				liBase=0;
+			}else if(valor<65){
+				liBase=48;
+			}else if(valor<97){
+				liBase=65;
+				adicionar=10;
+			}else{
+				liBase=97;
+			}
+			valor = valor - liBase + adicionar;
+			return valor;
+		}
+		
+		public int calcAsc(String str, int pos){
+			char lc = Convert.ToChar(str.Substring(pos,1));
+			return (int)lc;
+		}
+		
+		public List<int> parseBase32Partes(String texto){
+			List<int> partes = new List<int>();
+			int valor1;
+			int valor2;
+			int valor;
+			
+			for(int i=0; i<texto.Length;i++){
+				valor1=calcAsc(texto,i);
+				if(valor1<97){
+					valor2=calcAsc(texto,++i);
+				}else{
+					valor2=valor1;
+					valor1=0;
+				}
+				valor1=calcValorAsc(valor1);
+				valor2=calcValorAsc(valor2);
+				valor=(valor1*32)+valor2;
+				partes.Add(valor);
+			}
+			
+			return partes;
+		}
+		
+		public bool parseBase32(String texto, VariaveisTreeView aVarTv,MainForm aMainForm){
+			
+			String modulosAdd;
+			if(texto==null) return false;
+			
+			//aMainForm.gravaLog(texto);
+			
+			String[] partes = texto.Split('|');
+
+			foreach (string modulos in partes){
+				if(modulos.Substring(0,3).Equals( "[v:" ) ){
+					modulosAdd = modulos.Substring(3);
+				}else if(modulos.Substring(0,2).Equals( "v:" ) ){
+					modulosAdd = modulos.Substring(2);
+				}else if(modulos.Substring(0,1).Equals( "]" )) {
+					break;
+				}else{
+					modulosAdd = modulos;
+				}
+				
+				List<int> lista = parseBase32Partes(modulosAdd);
+				for(int i=2;i<lista.Count;i++){
+					int tipoModulo=lista[0];
+					int tipoSequencia=lista[1];
+					int valor=lista[i];
+
+					Variavel lVariavel = new Variavel( tipoModulo,
+					                                  tipoSequencia,
+					                                  i -2,
+					                                  valor );
+					aVarTv.atualizaValorVariavel( lVariavel );
+				}
+			}
+			
+			return true;
+		}
+		
 		public bool parse(String texto){
 			
 			string[] partes;

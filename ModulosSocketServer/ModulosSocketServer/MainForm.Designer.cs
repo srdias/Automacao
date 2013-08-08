@@ -69,7 +69,6 @@ namespace ModulosSocketServer
 			this.label9 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.tvVariaveis = new System.Windows.Forms.TreeView();
-			this.button6 = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -412,22 +411,11 @@ namespace ModulosSocketServer
 			this.tvVariaveis.TabIndex = 0;
 			this.tvVariaveis.DoubleClick += new System.EventHandler(this.TvVariaveisDoubleClick);
 			// 
-			// button6
-			// 
-			this.button6.Location = new System.Drawing.Point(263, 12);
-			this.button6.Name = "button6";
-			this.button6.Size = new System.Drawing.Size(75, 82);
-			this.button6.TabIndex = 6;
-			this.button6.Text = "button6";
-			this.button6.UseVisualStyleBackColor = true;
-			this.button6.Click += new System.EventHandler(this.Button6Click);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1034, 668);
-			this.Controls.Add(this.button6);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.textStatusSocket);
@@ -448,7 +436,6 @@ namespace ModulosSocketServer
 			this.groupBox4.PerformLayout();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.TextBox textValorAlterado;
