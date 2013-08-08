@@ -22,10 +22,13 @@ namespace ModulosSocketServer
 		const int NO_INDICE = 2;
 		const int NO_VARIAVEL = 3;
 		
+		public MainForm iMainForm;
+		
 		public TreeView tv;
-		public VariaveisTreeView(TreeView aTv)
+		public VariaveisTreeView(TreeView aTv, MainForm aMainForm)
 		{
 			tv=aTv;
+			iMainForm = aMainForm;
 		}
 		
 		public TreeNode findTreeNodeByVariavel(Variavel aVariavel){
@@ -91,6 +94,18 @@ namespace ModulosSocketServer
 			ltn = insertItem( ltn, aVariavel.getNomeModuloTV(), NO_MODULO );
 			ltn = insertItem( ltn, aVariavel.getNomeIndiceTV(), NO_INDICE );
 			ltn = insertItem( ltn, aVariavel.getNomeVariavelForTV(), NO_VARIAVEL );
+			
+			String lsNomeModulo=aVariavel.getNomeModulo();
+			String lsNomeVariavel=aVariavel.getNomeVariavel();
+			if( lsNomeModulo.Equals("02-TIPO_MODULO_CLIMA") ){
+				if(lsNomeVariavel.Equals("00-CLIMA_UMIDADE")){
+					iMainForm.displayProp("Umidade", aVariavel.getValorTV() );
+				}else if(lsNomeVariavel.Equals("01-CLIMA_TEMPERATURA")){
+					iMainForm.displayProp("Temperatura", aVariavel.getValorTV() );
+				}else if(lsNomeVariavel.Equals("02-CLIMA_LUMINOSIDADE")){
+					iMainForm.displayProp("ldr", aVariavel.getValorTV() );
+				}
+			}
 
 		}
 		

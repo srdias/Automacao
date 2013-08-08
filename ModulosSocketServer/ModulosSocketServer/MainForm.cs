@@ -151,7 +151,7 @@ namespace ModulosSocketServer
 			
 			if( textStatusSocket.Text.Substring(0,5).Equals("data:") ){
 				String lsConteudo=textStatusSocket.Text.Substring(5);
-				VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis);
+				VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis,this);
 				Parametros lParam = new Parametros();
 				lParam.parseBase32(lsConteudo,lVarTv,this);
 				tvVariaveis.ExpandAll();
@@ -164,7 +164,7 @@ namespace ModulosSocketServer
 		void Button2Click(object sender, EventArgs e)
 		{
 			
-			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis);
+			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis,this);
 			
 			lVarTv.atualizaVariavel( new Variavel(1,1,0,334) );
 			lVarTv.atualizaVariavel( new Variavel(1,1,1,234) );
@@ -188,7 +188,7 @@ namespace ModulosSocketServer
 		void TvVariaveisDoubleClick(object sender, EventArgs e)
 		{
 			
-			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis);
+			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis,this);
 			Variavel lVariavel = new Variavel();
 			
 			lVariavel= lVarTv.getVariavelByTreeNode();
@@ -203,7 +203,7 @@ namespace ModulosSocketServer
 		
 		void Button3Click(object sender, EventArgs e)
 		{
-			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis);
+			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis,this);
 			Variavel lVariavel = new Variavel();
 			Variavel lVariavelTV;
 			
@@ -225,14 +225,14 @@ namespace ModulosSocketServer
 		
 		void Button4Click(object sender, EventArgs e)
 		{
-			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis);
+			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis,this);
 			
 			lVarTv.atualizaValorVariavel( new Variavel(3,1,0,20) );
 		}
 		
 		void Button5Click(object sender, EventArgs e)
 		{
-			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis);
+			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis,this);
 			List<Variavel> variaveisList = new List<Variavel>();
 			
 			lVarTv.nodesVariaveisModificadas(variaveisList);
@@ -290,7 +290,7 @@ namespace ModulosSocketServer
 		
 		void Button6Click(object sender, EventArgs e)
 		{
-			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis);
+			VariaveisTreeView lVarTv = new VariaveisTreeView(tvVariaveis,this);
 			Parametros lParam = new Parametros();
 			String lsConteudo="[v:bbASAUb34S4LSP0|v:ccaaAU|v:ddab0Maaa|v:eeaE2|]FreeRam=151";
 			lParam.parseBase32(lsConteudo,lVarTv,this);

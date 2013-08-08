@@ -208,6 +208,9 @@ namespace ModulosSocketServer
 						case 0: lsNome="TEMPO_HOR"; break;
 						case 1: lsNome="TEMPO_MIN"; break;
 						case 2: lsNome="TEMPO_SEG"; break;
+						case 3: lsNome="TEMPO_HOR_BASE"; break;
+						case 4: lsNome="TEMPO_MIN_BASE"; break;
+						case 5: lsNome="TEMPO_SEG_BASE"; break;
 				};
 			};
 			
