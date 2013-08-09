@@ -39,15 +39,13 @@ void AdEthernet2::atenderRequisicoes(AdModulosContainer * aAdModulosContainer){
 		char* data = (char *) Ethernet::buffer + pos;
 
 		char lsString[30];
-		
-		Serial.print("freeRam=");
-		Serial.println(freeRam ());
 
 		bfill.emit_p(PSTR("["));
 		for(short i=0; i<aAdModulosContainer->qtdeItens; i++){
 			aAdModulosContainer->iModulos[i]->publicarString(lsString);
 			bfill.emit_p(PSTR("v:$S"), lsString);
 		}
+
 		bfill.emit_p(PSTR("]"));
 		bfill.emit_p(PSTR("FreeRam=$D"), freeRam ());
 

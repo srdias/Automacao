@@ -11,6 +11,8 @@ BancadaMaternidade iMaternidade(4);
 
 AdEthernet2 iRede;
 
+unsigned long lmilles;
+
 int freeRam () {
   extern int __heap_start, *__brkval; 
   int v; 
@@ -20,6 +22,7 @@ int freeRam () {
 
 void setup() {
 
+	lmilles=0;
   Serial.begin(9600);   
 
   Serial.println("Iniciando arduino...");
@@ -43,9 +46,12 @@ void setup() {
 }
 
 void loop() {
-	iAdModulosContainer.liveAll();
-	iAdModulosContainer.processarComandos();
+	if(millis() > lmilles){
+		iAdModulosContainer.liveAll();
+		iAdModulosContainer.processarComandos();
+		lmilles = millis() + DELAY_LOOP_ARDUINO;
+	}
 	iRede.atenderRequisicoes(&iAdModulosContainer);
-	delay(DELAY_LOOP_ARDUINO);
+	//delay(DELAY_LOOP_ARDUINO);
 };
 
