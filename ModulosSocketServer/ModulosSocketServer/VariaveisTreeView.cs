@@ -21,6 +21,9 @@ namespace ModulosSocketServer
 		const int NO_MODULO = 1;
 		const int NO_INDICE = 2;
 		const int NO_VARIAVEL = 3;
+		int hora;
+		int minuto;
+		int segundo;
 		
 		public MainForm iMainForm;
 		
@@ -104,6 +107,20 @@ namespace ModulosSocketServer
 					iMainForm.displayProp("Temperatura", aVariavel.getValorTV() );
 				}else if(lsNomeVariavel.Equals("02-CLIMA_LUMINOSIDADE")){
 					iMainForm.displayProp("ldr", aVariavel.getValorTV() );
+				}
+			}
+			
+			if( lsNomeModulo.Equals("03-TIPO_MODULO_TEMPO") ){
+				if(lsNomeVariavel.Equals("00-TEMPO_HOR")){
+					hora = Convert.ToInt32( aVariavel.getValorTV() );
+				}else if(lsNomeVariavel.Equals("01-TEMPO_MIN")){
+					minuto = Convert.ToInt32( aVariavel.getValorTV() );
+				}else if(lsNomeVariavel.Equals("02-TEMPO_SEG")){
+					segundo = Convert.ToInt32( aVariavel.getValorTV() );
+					String lsHora=hora.ToString()+ ":"+
+						minuto.ToString()+ ":"+
+						segundo.ToString();
+					iMainForm.displayProp("Hora", lsHora );
 				}
 			}
 

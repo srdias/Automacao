@@ -75,6 +75,9 @@ namespace ModulosSocketServer
 			if(propname=="Umidade"){
 				SetControlPropertyValue(valorUmidade,"Text",propValue);
 			}
+			if(propname=="Hora"){
+				SetControlPropertyValue(valorHora,"Text",propValue);
+			}
 		}
 		
 		private void ThreadTarefa(){

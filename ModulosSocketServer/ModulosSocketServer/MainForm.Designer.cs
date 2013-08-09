@@ -69,6 +69,8 @@ namespace ModulosSocketServer
 			this.label9 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.tvVariaveis = new System.Windows.Forms.TreeView();
+			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.valorHora = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -76,6 +78,7 @@ namespace ModulosSocketServer
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.groupBox4.SuspendLayout();
+			this.groupBox5.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -221,9 +224,9 @@ namespace ModulosSocketServer
 			// button1
 			// 
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(891, 34);
+			this.button1.Location = new System.Drawing.Point(891, 122);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(120, 137);
+			this.button1.Size = new System.Drawing.Size(120, 49);
 			this.button1.TabIndex = 4;
 			this.button1.Text = "Sair";
 			this.button1.UseVisualStyleBackColor = true;
@@ -411,11 +414,32 @@ namespace ModulosSocketServer
 			this.tvVariaveis.TabIndex = 0;
 			this.tvVariaveis.DoubleClick += new System.EventHandler(this.TvVariaveisDoubleClick);
 			// 
+			// groupBox5
+			// 
+			this.groupBox5.Controls.Add(this.valorHora);
+			this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox5.Location = new System.Drawing.Point(891, 20);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(118, 82);
+			this.groupBox5.TabIndex = 7;
+			this.groupBox5.TabStop = false;
+			this.groupBox5.Text = "Hora";
+			// 
+			// valorHora
+			// 
+			this.valorHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.valorHora.Location = new System.Drawing.Point(6, 38);
+			this.valorHora.Name = "valorHora";
+			this.valorHora.Size = new System.Drawing.Size(104, 29);
+			this.valorHora.TabIndex = 0;
+			this.valorHora.Text = "00:00:00";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1034, 668);
+			this.Controls.Add(this.groupBox5);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.textStatusSocket);
@@ -434,8 +458,11 @@ namespace ModulosSocketServer
 			this.tabPage2.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
+			this.groupBox5.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Label valorHora;
+		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.TextBox textValorAlterado;
