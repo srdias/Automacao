@@ -10,6 +10,8 @@ git commit -m "first commit"
 
 git remote add origin https://github.com/srdias/Automacao.git
 
+git pull origin master
+
 git push -u origin master
 
 git commit -m "Importacao inicial do projeto existente."
