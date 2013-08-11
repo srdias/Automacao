@@ -85,6 +85,7 @@ namespace ModulosSocketServer
 			gravaLog( "Iniciando thread...");
 			while(!ibEncerrar){
 				StartClient();
+				Thread.Sleep(500);
 			};
 			Thread.Sleep(1000);
 			gravaLog( "Thread finalizada..." );
@@ -132,8 +133,8 @@ namespace ModulosSocketServer
 			              texto);
 			
 			if( texto != null ){
-				String textoStatusSocket = System.DateTime.Now.ToString() + " " + texto;
-				SetControlPropertyValue(textStatusSocket,"Text",textoStatusSocket);
+//				String textoStatusSocket = System.DateTime.Now.ToString() + " " + texto;
+//				SetControlPropertyValue(textStatusSocket,"Text",textoStatusSocket);
 			};
 
 			arqSaida.Close();
