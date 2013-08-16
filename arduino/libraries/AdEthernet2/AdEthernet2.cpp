@@ -10,8 +10,23 @@ extern int freeRam ();
 // ethernet mac address - must be unique on your network
 static byte mymac[] = { 0x74,0x69,0x69,0x2D,0x30,0x31 };
 
-byte Ethernet::buffer[1024]; // tcp/ip send and receive buffer
+byte Ethernet::buffer[512]; // tcp/ip send and receive buffer
 static BufferFiller bfill;  // used as cursor while filling the buffer
+
+int strStartWith(char *base, char *find){
+	int i;
+	for(i=0; base[i] && find[i] && base[i]==find[i];i ++);
+	return !(find[i]);
+};
+
+void strMid(char *base, char * dest, int start, char stop){
+	int j=0;
+	for(int i=start;base[i] && base[i] != stop;i++){
+		dest[j++]=base[i];
+	};
+	dest[j]=0;
+}
+
 
 void AdEthernet2::setup(){
 
@@ -37,8 +52,18 @@ void AdEthernet2::atenderRequisicoes(AdModulosContainer * aAdModulosContainer){
 	if (pos) {
 		bfill = ether.tcpOffset();
 		char* data = (char *) Ethernet::buffer + pos;
-
 		char lsString[30];
+		
+//		Serial.print("Data: [");
+//		Serial.print(data);
+//		Serial.println("] ");
+		
+		if( strStartWith(data,"GET /?a;") == 1 ){
+			strMid(data,lsString,6, ' ');
+			Serial.print("HTTP GET=");
+			Serial.println(lsString);
+		}
+		
 
 		bfill.emit_p(PSTR("["));
 		for(short i=0; i<aAdModulosContainer->qtdeItens; i++){
@@ -48,9 +73,11 @@ void AdEthernet2::atenderRequisicoes(AdModulosContainer * aAdModulosContainer){
 
 		bfill.emit_p(PSTR("]"));
 		bfill.emit_p(PSTR("FreeRam=$D"), freeRam ());
+		//bfill.emit_p(PSTR("<br>Recebido:$S"), data);
 
 		ether.httpServerReply(bfill.position()); // send web page data
 		
 	};
 
 };
+
