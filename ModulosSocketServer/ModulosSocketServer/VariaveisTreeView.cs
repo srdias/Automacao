@@ -117,9 +117,9 @@ namespace ModulosSocketServer
 					minuto = Convert.ToInt32( aVariavel.getValorTV() );
 				}else if(lsNomeVariavel.Equals("02-TEMPO_SEG")){
 					segundo = Convert.ToInt32( aVariavel.getValorTV() );
-					String lsHora=hora.ToString()+ ":"+
-						minuto.ToString()+ ":"+
-						segundo.ToString();
+					String lsHora=hora.ToString("00")+ ":"+
+						minuto.ToString("00")+ ":"+
+						segundo.ToString("00");
 					iMainForm.displayProp("Hora", lsHora );
 				}
 			}

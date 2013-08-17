@@ -10,7 +10,7 @@ extern int freeRam ();
 // ethernet mac address - must be unique on your network
 static byte mymac[] = { 0x74,0x69,0x69,0x2D,0x30,0x31 };
 
-byte Ethernet::buffer[1024]; // tcp/ip send and receive buffer
+byte Ethernet::buffer[512]; // tcp/ip send and receive buffer
 static BufferFiller bfill;  // used as cursor while filling the buffer
 
 void AdEthernet2::setup(){
@@ -39,7 +39,7 @@ void AdEthernet2::atenderRequisicoes(AdModulosContainer * aAdModulosContainer){
 		char* data = (char *) Ethernet::buffer + pos;
 
 		char lsString[30];
-
+		
 		bfill.emit_p(PSTR("["));
 		for(short i=0; i<aAdModulosContainer->qtdeItens; i++){
 			aAdModulosContainer->iModulos[i]->publicarString(lsString);
@@ -48,6 +48,7 @@ void AdEthernet2::atenderRequisicoes(AdModulosContainer * aAdModulosContainer){
 
 		bfill.emit_p(PSTR("]"));
 		bfill.emit_p(PSTR("FreeRam=$D"), freeRam ());
+		bfill.emit_p(PSTR("<br>Recebido:$S"), data);
 
 		ether.httpServerReply(bfill.position()); // send web page data
 		
