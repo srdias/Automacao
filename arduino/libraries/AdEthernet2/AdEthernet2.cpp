@@ -59,8 +59,9 @@ void AdEthernet2::atenderRequisicoes(AdModulosContainer * aAdModulosContainer){
 		
 		if( strStartWith(data,"GET /?a;") == 1 ){
 			strMid(data,lsString,6, ' ');
-			Serial.print("HTTP GET=");
-			Serial.println(lsString);
+			//Serial.print("HTTP GET=");
+			//Serial.println(lsString);
+			aAdModulosContainer->parseChangeVar(lsString);
 		}
 		
 		bfill.emit_p(PSTR("["));

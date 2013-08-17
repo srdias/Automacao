@@ -30,7 +30,8 @@ void setup() {
   iRede.setup();
 
   iBancada.setPinos(PINO_A1,PINO_A2,PINO_D3);
-  iClima.setPinos(PINO_D9,PINO_A0);
+  iClima.setPinosAnalogicoLdr(PINO_A0);
+  iClima.setPinosDigitalDht11(PINO_D9);
   
   iMaternidade.setPino(PINO_D4);
   iMaternidade.setClima(&iClima);

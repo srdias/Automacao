@@ -128,7 +128,8 @@ class Clima :public Modulo{
 	
 	public:
 		Clima(short aRegistro);
-		short setPinos(short aPinoDht11, short aPinoLdr);
+		void setPinosAnalogicoLdr(short aPinoLdr);
+		void setPinosDigitalDht11(short aPinoDht11);
 		short acao();
 		short triggerAlterarVariavel(short varNum, short varNovoValor, short varAnteriorValor);
 

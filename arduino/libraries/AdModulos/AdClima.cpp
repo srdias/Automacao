@@ -8,25 +8,20 @@ Clima::Clima(short aRegistro){
 	varAlocar(CLIMA_QTDE_VARIAVEIS);
 };
 
-short Clima::setPinos(short aPinoDht11, short aPinoLdr){
-
-	iPinoDht11.setPino(aPinoDht11);
+void Clima::setPinosAnalogicoLdr(short aPinoLdr){
 	iPinoLdr.setPino(aPinoLdr);
-	
-	iPinoDht11.mode(INPUT);
 	iPinoLdr.mode(INPUT);
-	
+
+	varSetValor(CLIMA_LUMINOSIDADE, 0);
+};
+
+void Clima::setPinosDigitalDht11(short aPinoDht11){
+	iPinoDht11.setPino(aPinoDht11);
+	iPinoDht11.mode(INPUT);
 	iDht11.iniciar(iPinoDht11.getPino());
-	
+
 	varSetValor(CLIMA_UMIDADE, 0);
 	varSetValor(CLIMA_TEMPERATURA, 0);
-	varSetValor(CLIMA_LUMINOSIDADE, 0);
-	
-/*	varUsaMedia(CLIMA_UMIDADE, 1);
-	varUsaMedia(CLIMA_TEMPERATURA, 1);
-	varUsaMedia(CLIMA_LUMINOSIDADE, 1);*/
-	
-	return 1;
 };
 
 short Clima::acao(){
