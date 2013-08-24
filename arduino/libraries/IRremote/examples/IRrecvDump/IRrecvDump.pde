@@ -4,7 +4,6 @@
  * Version 0.1 July, 2009
  * Copyright 2009 Ken Shirriff
  * http://arcfn.com
- * JVC and Panasonic protocol added by Kristian Lauszus (Thanks to zenwheel and other people at the original blog post)
  */
 
 #include <IRremote.h>
@@ -29,32 +28,26 @@ void setup()
 void dump(decode_results *results) {
   int count = results->rawlen;
   if (results->decode_type == UNKNOWN) {
-    Serial.print("Unknown encoding: ");
+    Serial.println("Could not decode message");
   } 
-  else if (results->decode_type == NEC) {
-    Serial.print("Decoded NEC: ");
-  } 
-  else if (results->decode_type == SONY) {
-    Serial.print("Decoded SONY: ");
-  } 
-  else if (results->decode_type == RC5) {
-    Serial.print("Decoded RC5: ");
-  } 
-  else if (results->decode_type == RC6) {
-    Serial.print("Decoded RC6: ");
+  else {
+    if (results->decode_type == NEC) {
+      Serial.print("Decoded NEC: ");
+    } 
+    else if (results->decode_type == SONY) {
+      Serial.print("Decoded SONY: ");
+    } 
+    else if (results->decode_type == RC5) {
+      Serial.print("Decoded RC5: ");
+    } 
+    else if (results->decode_type == RC6) {
+      Serial.print("Decoded RC6: ");
+    }
+    Serial.print(results->value, HEX);
+    Serial.print(" (");
+    Serial.print(results->bits, DEC);
+    Serial.println(" bits)");
   }
-  else if (results->decode_type == PANASONIC) {	
-    Serial.print("Decoded PANASONIC - Address: ");
-    Serial.print(results->panasonicAddress,HEX);
-    Serial.print(" Value: ");
-  }
-  else if (results->decode_type == JVC) {
-     Serial.print("Decoded JVC: ");
-  }
-  Serial.print(results->value, HEX);
-  Serial.print(" (");
-  Serial.print(results->bits, DEC);
-  Serial.println(" bits)");
   Serial.print("Raw (");
   Serial.print(count, DEC);
   Serial.print("): ");
