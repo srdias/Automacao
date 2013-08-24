@@ -17,6 +17,7 @@ decode_results results;
 void setup()
 {
   Serial.begin(9600);
+  Serial.println("Iniciando o arduino...");
   irrecv.enableIRIn(); // Start the receiver
 }
 
@@ -48,10 +49,10 @@ void dump(decode_results *results) {
     Serial.print(results->bits, DEC);
     Serial.println(" bits)");
   }
+
   Serial.print("Raw (");
   Serial.print(count, DEC);
   Serial.print("): ");
-
   for (int i = 0; i < count; i++) {
     if ((i % 2) == 1) {
       Serial.print(results->rawbuf[i]*USECPERTICK, DEC);
@@ -61,13 +62,14 @@ void dump(decode_results *results) {
     }
     Serial.print(" ");
   }
+
   Serial.println("");
 }
 
 
 void loop() {
   if (irrecv.decode(&results)) {
-    Serial.println(results.value, HEX);
+//    Serial.println(results.value, HEX);
     dump(&results);
     irrecv.resume(); // Receive the next value
   }

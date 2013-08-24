@@ -75,6 +75,8 @@ public:
   void sendRaw(unsigned int buf[], int len, int hz);
   void sendRC5(unsigned long data, int nbits);
   void sendRC6(unsigned long data, int nbits);
+  void sendPanasonic(unsigned long data1, unsigned long data2, int nbits);
+  void sendSamsung(unsigned long data1, unsigned long data2, int nbits);
   // private:
   void enableIROut(int khz);
   VIRTUAL void mark(int usec);
@@ -85,7 +87,7 @@ public:
 // Some useful constants
 
 #define USECPERTICK 50  // microseconds per clock interrupt tick
-#define RAWBUF 76 // Length of raw duration buffer
+#define RAWBUF 140 // Length of raw duration buffer
 
 // Marks tend to be 100us too long, and spaces 100us too short
 // when received due to sensor lag.

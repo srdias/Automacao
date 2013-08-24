@@ -212,6 +212,78 @@ void IRsend::enableIROut(int khz) {
   OCR2B = OCR2A / 3; // 33% duty cycle
 }
 
+//Added Panasonic --- a more than 32 bit protocol
+// First 32 bit in data1
+// Remaining bits leftadjusted in data2
+void IRsend::sendPanasonic(unsigned long data1, unsigned long data2, int nbits) {
+	 
+	enableIROut(38);
+	mark(PANASONIC_HDR_MARK);
+	space(PANASONIC_HDR_SPACE);
+	 
+	for (int i = 0; i < 32; i++) {
+		if (data1 & TOPBIT) {
+			mark(PANASONIC_BIT_MARK);
+			space(PANASONIC_ONE_SPACE);
+		}else{
+			mark(PANASONIC_BIT_MARK);
+			space(PANASONIC_ZERO_SPACE);
+		}
+		data1 <<= 1;
+	}
+	 
+	nbits = nbits - 32;
+	for (int i = 0; i < nbits; i++) {
+		if (data2 & TOPBIT) {
+			mark(PANASONIC_BIT_MARK);
+			space(PANASONIC_ONE_SPACE);
+		}else{
+			mark(PANASONIC_BIT_MARK);
+			space(PANASONIC_ZERO_SPACE);
+		}
+		data2 <<= 1;
+	}
+	mark(PANASONIC_BIT_MARK);
+	space(30000);
+	space(30000);
+	space(14000);
+}
+ 
+// Added Samsung code - a 42 bit protocol
+// First 32 bit in data1
+// Remaining bits left-adjusted in data2
+// Code is exact copy of NEC with extra loop for data2
+void IRsend::sendSamsung(unsigned long data1, unsigned long data2, int nbits){
+	enableIROut(38);
+	mark(NEC_HDR_MARK);
+	space(NEC_HDR_SPACE);
+	for (int i = 0; i < 32; i++) {
+		if (data1 & TOPBIT) {
+			mark(NEC_BIT_MARK);
+			space(NEC_ONE_SPACE);
+		} else {
+			mark(NEC_BIT_MARK);
+			space(NEC_ZERO_SPACE);
+		}
+		data1 <<= 1;
+	}
+	 
+	//last bits
+	nbits = nbits -32;
+	for (int i = 0; i < nbits; i++) {
+		if (data2 & TOPBIT) {
+			mark(NEC_BIT_MARK);
+			space(NEC_ONE_SPACE);
+		} else {
+			mark(NEC_BIT_MARK);
+			space(NEC_ZERO_SPACE);
+		}
+		data2 <<= 1;
+	}
+	mark(NEC_BIT_MARK);
+	space(0);
+}
+
 IRrecv::IRrecv(int recvpin)
 {
   irparams.recvpin = recvpin;

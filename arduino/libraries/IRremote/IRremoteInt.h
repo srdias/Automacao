@@ -12,7 +12,7 @@
 #ifndef IRremoteint_h
 #define IRremoteint_h
 
-#include <WProgram.h>
+#include <Arduino.h>
 
 #define CLKFUDGE 5      // fudge factor for clock interrupt overhead
 #define CLK 256      // max value for clock (timer 2)
@@ -50,6 +50,12 @@
 #define SONY_ONE_MARK	1200
 #define SONY_ZERO_MARK	600
 #define SONY_RPT_LENGTH 45000
+
+#define PANASONIC_HDR_MARK 3502
+#define PANASONIC_HDR_SPACE 1750
+#define PANASONIC_BIT_MARK 502
+#define PANASONIC_ONE_SPACE 1244
+#define PANASONIC_ZERO_SPACE 370
 
 #define RC5_T1		889
 #define RC5_RPT_LENGTH	46000
