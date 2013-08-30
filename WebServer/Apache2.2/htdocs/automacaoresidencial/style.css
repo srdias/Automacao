@@ -1,0 +1,40 @@
+
+body  {  	
+	background: #ddd;  
+}    
+
+td:hover { 
+	background-color: #3333FF;
+	color: 000033;
+}
+
+td
+{
+	font:22px arial,sans-serif;
+	font-weight:bold;
+	border-width: thin; 
+	border-style: solid;
+	color: 000044;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:10px;
+	padding-left:10px;
+	text-align:center;
+	border-color: #0000CC;
+}
+
+tr
+{
+	xcolor: 483D8B;
+}
+
+table {
+	border-spacing:0;
+    border-collapse:collapse;
+	background-color:3399FF;
+    width:100%; 
+    xmargin-left:2%; 
+    xmargin-right:2%;
+    xmargin-top:2%; 
+    xmargin-bottom:2%;
+}

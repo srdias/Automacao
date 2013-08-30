@@ -1,0 +1,108 @@
+Starting the Apache2.2 service
+The Apache2.2 service is running.
+rmine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+[Wed Aug 28 21:24:16 2013] [notice] Apache/2.2.25 (Win32) configured -- resuming normal operations
+[Wed Aug 28 21:24:16 2013] [notice] Server built: Jul 10 2013 01:52:12
+[Wed Aug 28 21:24:16 2013] [notice] Parent: Created child process 17480
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+[Wed Aug 28 21:24:16 2013] [notice] Child 17480: Child process is running
+[Wed Aug 28 21:24:16 2013] [notice] Child 17480: Acquired the start mutex.
+[Wed Aug 28 21:24:16 2013] [notice] Child 17480: Starting 64 worker threads.
+[Wed Aug 28 21:24:16 2013] [notice] Child 17480: Starting thread to listen on port 80.
+[Wed Aug 28 22:07:34 2013] [notice] Parent: Received shutdown signal -- Shutting down the server.
+[Wed Aug 28 22:07:34 2013] [notice] Child 17480: Exit event signaled. Child process is ending.
+[Wed Aug 28 22:07:35 2013] [notice] Child 17480: Released the start mutex
+[Wed Aug 28 22:07:36 2013] [notice] Child 17480: All worker threads have exited.
+[Wed Aug 28 22:07:36 2013] [notice] Child 17480: Child process is exiting
+[Wed Aug 28 22:07:36 2013] [notice] Parent: Child process exited successfully.
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+[Wed Aug 28 22:09:23 2013] [notice] Apache/2.2.25 (Win32) configured -- resuming normal operations
+[Wed Aug 28 22:09:23 2013] [notice] Server built: Jul 10 2013 01:52:12
+[Wed Aug 28 22:09:23 2013] [notice] Parent: Created child process 21236
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+[Wed Aug 28 22:09:23 2013] [notice] Child 21236: Child process is running
+[Wed Aug 28 22:09:23 2013] [notice] Child 21236: Acquired the start mutex.
+[Wed Aug 28 22:09:23 2013] [notice] Child 21236: Starting 64 worker threads.
+[Wed Aug 28 22:09:23 2013] [notice] Child 21236: Starting thread to listen on port 80.
+[Wed Aug 28 22:14:48 2013] [notice] Parent: Received restart signal -- Restarting the server.
+[Wed Aug 28 22:14:48 2013] [notice] Child 21236: Exit event signaled. Child process is ending.
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+[Wed Aug 28 22:14:48 2013] [notice] Apache/2.2.25 (Win32) configured -- resuming normal operations
+[Wed Aug 28 22:14:48 2013] [notice] Server built: Jul 10 2013 01:52:12
+[Wed Aug 28 22:14:48 2013] [notice] Parent: Created child process 22116
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+[Wed Aug 28 22:14:48 2013] [notice] Child 22116: Child process is running
+[Wed Aug 28 22:14:49 2013] [notice] Child 21236: Released the start mutex
+[Wed Aug 28 22:14:49 2013] [notice] Child 22116: Acquired the start mutex.
+[Wed Aug 28 22:14:49 2013] [notice] Child 22116: Starting 64 worker threads.
+[Wed Aug 28 22:14:49 2013] [notice] Child 22116: Starting thread to listen on port 80.
+[Wed Aug 28 22:14:51 2013] [notice] Child 21236: All worker threads have exited.
+[Wed Aug 28 22:14:51 2013] [notice] Child 21236: Child process is exiting
+[Wed Aug 28 22:30:54 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico
+[Wed Aug 28 22:43:24 2013] [notice] Parent: Received restart signal -- Restarting the server.
+[Wed Aug 28 22:43:24 2013] [notice] Child 22116: Exit event signaled. Child process is ending.
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+[Wed Aug 28 22:43:24 2013] [notice] Apache/2.2.25 (Win32) PHP/5.3.27 configured -- resuming normal operations
+[Wed Aug 28 22:43:24 2013] [notice] Server built: Jul 10 2013 01:52:12
+[Wed Aug 28 22:43:24 2013] [notice] Parent: Created child process 22324
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+httpd.exe: Could not reliably determine the server's fully qualified domain name, using 192.168.0.196 for ServerName
+[Wed Aug 28 22:43:24 2013] [notice] Child 22324: Child process is running
+[Wed Aug 28 22:43:25 2013] [notice] Child 22324: Acquired the start mutex.
+[Wed Aug 28 22:43:25 2013] [notice] Child 22116: Released the start mutex
+[Wed Aug 28 22:43:25 2013] [notice] Child 22324: Starting 64 worker threads.
+[Wed Aug 28 22:43:26 2013] [notice] Child 22116: All worker threads have exited.
+[Wed Aug 28 22:43:26 2013] [notice] Child 22324: Starting thread to listen on port 80.
+[Wed Aug 28 22:43:26 2013] [notice] Child 22116: Child process is exiting
+[Wed Aug 28 23:49:35 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Wed Aug 28 23:50:26 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Wed Aug 28 23:52:07 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Wed Aug 28 23:52:33 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Wed Aug 28 23:53:44 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Wed Aug 28 23:55:05 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Wed Aug 28 23:55:19 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Wed Aug 28 23:58:34 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Wed Aug 28 23:58:49 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Wed Aug 28 23:59:44 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:00:01 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:02:36 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:03:31 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:05:12 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:05:14 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:05:48 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:05:48 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:07:08 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:12:40 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:12:54 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:14:26 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:15:27 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:15:54 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:16:08 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:16:10 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:18:15 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:19:03 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:20:59 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:21:29 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:21:52 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:22:42 2013] [error] [client 127.0.0.1] (20024)The given path is misformatted or contained invalid characters: Cannot map GET /automacaoresidencial/%C3%A2%E2%82%AC%C2%9Dhttp://google.com%C3%A2%E2%82%AC%C2%9D HTTP/1.1 to file, referer: http://localhost/automacaoresidencial/testeiframe.php
+[Thu Aug 29 00:29:37 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:30:15 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:30:37 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:31:49 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:32:21 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:32:51 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:32:51 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico
+[Thu Aug 29 00:34:18 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/www.terra.com.br, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:34:45 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 00:35:22 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/link.html, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 06:53:00 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/doubleclick, referer: http://www.uol.com.br/
+[Thu Aug 29 14:12:00 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/empresa.htm, referer: http://localhost/automacaoresidencial/testediv.html
+[Thu Aug 29 14:22:31 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/jquery-1js, referer: http://localhost/automacaoresidencial/testediv.html
+[Thu Aug 29 14:52:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/function.session-start, referer: http://localhost/automacaoresidencial/automacaoResidencial.html
+[Thu Aug 29 15:24:59 2013] [error] [client 192.168.0.124] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/automacaoResidencial.htm
+[Thu Aug 29 16:00:28 2013] [error] [client 192.168.0.166] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencialcial
+[Thu Aug 29 16:00:30 2013] [error] [client 192.168.0.166] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico, referer: http://192.168.0.196/automacaoresidencialcial
+[Thu Aug 29 17:50:20 2013] [error] [client 127.0.0.1] script 'C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/testediv.php' not found or unable to stat

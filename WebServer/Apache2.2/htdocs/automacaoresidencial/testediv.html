@@ -1,0 +1,50 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.js"></script>
+<script type="text/javascript"  language="javascript">
+function loadContent(Div, sourceUrl) {
+alert("tst");
+$(Div).load(sourceUrl);
+}
+
+$(document).ready(function() {
+$("#linkAltera").click(function() {
+var str="teste";
+//str="XXX"+str+" Este eh o novo texto heehe!";
+if( $("#caixaTexto").html() == "SIM" ){
+	$("#caixaTexto").html("NAO");
+}else{
+	$("#caixaTexto").html("SIM");
+};
+tst=$("#caixaTexto").html();
+alert(tst);
+});
+});
+
+</script>
+
+<style type="text/css" >
+#container {
+        border:thin blue solid;
+		background-color:3399FF;
+		width: 90%; 
+		height: 100%; 
+}
+
+</style>
+
+</head>
+<body style="background-color: gray ">
+<div id="container"></div>
+<a href="#" onclick="loadContent('#container','teste01.php')">ajax</a>
+<a href="#" onclick="loadContent('#container','teste02.php')">ajax</a>
+
+<br/>
+<br/>
+<a id="linkAltera">Alterar conteudo</a>
+<br/>
+<br/>
+<div id="caixaTexto">Este conteudo sera alterado para outra coisa qualquer</div>
+
+</body>
+</html>
