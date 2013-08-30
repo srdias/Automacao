@@ -10,7 +10,7 @@ td:hover {
 
 td.opcaoTitulo
 {
-	font:22px arial,sans-serif;
+	font:3em arial,sans-serif;
 	font-weight:bold;
 	border-width: thin; 
 	border-style: solid;
@@ -26,7 +26,7 @@ td.opcaoTitulo
 
 td.opcao
 {
-	font:22px arial,sans-serif;
+	font:2em arial,sans-serif;
 	font-weight:bold;
 	border-width: thin; 
 	border-style: solid;
@@ -37,6 +37,7 @@ td.opcao
 	padding-left:10px;
 	text-align:center;
 	border-color: #0000CC;
+	height:80px;
 }
 
 table {
@@ -53,6 +54,11 @@ table.controle {
     width:100%; 
 }
 
+td.controle:hover { 
+	background-color: #3333FF;
+	color: 000033;
+}
+
 td.controle
 {
 	font:39px arial,sans-serif;
@@ -66,14 +72,16 @@ td.controle
 	padding-left:10px;
 	text-align:center;
 	border-color: #0000CC;
+	width: 2em;
+	height: 2em; 
 }
 
 
 #DivMenu {
 	xborder:thin blue solid;
 	xbackground-color:3399FF;
-	width: 90%; 
-	height: 80%; 
+	width: 100%; 
+	height: 100%; 
 
 }
 

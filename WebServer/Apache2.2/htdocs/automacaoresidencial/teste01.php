@@ -67,34 +67,34 @@ if( $menu != "_controle_tv_philco" ){
 	<td>
 		<table class="controle" >
 			<tr>
-				<td class="controle">1</td>
-				<td class="controle">2</td>
-				<td class="controle">3</td>
+				<td class="controle" onclick="loadContent('_acao_um');">1</td>
+				<td class="controle" onclick="loadContent('_acao_dois');">2</td>
+				<td class="controle" onclick="loadContent('_acao_tres');">3</td>
 			</tr>
 			<tr>
-				<td class="controle">4</td>
-				<td class="controle">5</td>
-				<td class="controle">6</td>
+				<td class="controle" onclick="loadContent('_acao_quatro');">4</td>
+				<td class="controle" onclick="loadContent('_acao_cinco');">5</td>
+				<td class="controle" onclick="loadContent('_acao_seis');">6</td>
 			</tr>
 			<tr>
-				<td class="controle">7</td>
-				<td class="controle">8</td>
-				<td class="controle">9</td>
+				<td class="controle" onclick="loadContent('_acao_sete');">7</td>
+				<td class="controle" onclick="loadContent('_acao_oito');">8</td>
+				<td class="controle" onclick="loadContent('_acao_nove');">9</td>
 			</tr>
 			<tr>
-				<td class="controle">Mudo</td>
-				<td class="controle" >0</td>
-				<td class="controle" >Voltar</td>
+				<td class="controle" onclick="loadContent('_acao_mudo');">Mudo</td>
+				<td class="controle" onclick="loadContent('_acao_zero');">0</td>
+				<td class="controle" onclick="loadContent('_acao_voltar');">Voltar</td>
 			</tr>
 			<tr>
-				<td class="controle">Vol +</td>
-				<td class="controle"></td>
-				<td class="controle">Canal +</td>
+				<td class="controle" onclick="loadContent('_acao_volume_mais');">Vol +</td>
+				<td class="controle" onclick="loadContent('_acao_nada');">x</td>
+				<td class="controle" onclick="loadContent('_acao_canal_mais');">Canal +</td>
 			</tr>
 			<tr>
-				<td class="controle">Vol -</td>
-				<td class="controle"></td>
-				<td class="controle">Canal -</td>
+				<td class="controle" onclick="loadContent('_acao_volume_menos');">Vol -</td>
+				<td class="controle" onclick="loadContent('_acao_nada');">x</td>
+				<td class="controle" onclick="loadContent('_acao_canal_menos');">Canal -</td>
 			</tr>
 		</table>
 	</td>
