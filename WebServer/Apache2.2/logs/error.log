@@ -106,3 +106,11 @@ httpd.exe: Could not reliably determine the server's fully qualified domain name
 [Thu Aug 29 16:00:28 2013] [error] [client 192.168.0.166] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencialcial
 [Thu Aug 29 16:00:30 2013] [error] [client 192.168.0.166] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico, referer: http://192.168.0.196/automacaoresidencialcial
 [Thu Aug 29 17:50:20 2013] [error] [client 127.0.0.1] script 'C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/testediv.php' not found or unable to stat
+[Thu Aug 29 21:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/inicio, referer: http://localhost/automacaoresidencial/teste03.php?menu=
+[Thu Aug 29 21:40:45 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/inicio, referer: http://localhost/automacaoresidencial/teste03.php?menu=
+[Thu Aug 29 21:40:53 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/inicio, referer: http://localhost/automacaoresidencial/teste03.php
+[Thu Aug 29 21:41:15 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/inicio, referer: http://localhost/automacaoresidencial/teste03.php
+[Thu Aug 29 22:52:45 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/retornar.png, referer: http://localhost/automacaoresidencial/teste03.php?menu=
+[Thu Aug 29 22:52:45 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/retornar.png
+[Thu Aug 29 23:07:56 2013] [error] [client 192.168.0.169] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico, referer: http://192.168.0.196/automacaoresidencial/
+[Thu Aug 29 23:17:14 2013] [error] [client 192.168.0.169] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico, referer: http://192.168.0.196/automacaoresidencial/
