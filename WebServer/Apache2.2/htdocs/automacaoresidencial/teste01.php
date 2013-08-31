@@ -2,25 +2,40 @@
 <table>
 <?php
 
-if (!empty($_GET['menu'])){
-	$menu=$_GET['menu'];
+if (!empty($_GET['parametro'])){
+	$parametro=$_GET['parametro'];
 }else{
-	$menu='inicio';
+	$parametro='inicio,0';
 }
 
+$partes_parametro = explode (";",$parametro);
+
+$ultimo=count($partes_parametro) -1;
+
+$partes = explode (",",$partes_parametro[$ultimo]);
+$menu=$partes[0];
+$indice=$partes[1];
+
+$partes = explode (",",$partes_parametro[$ultimo -1]);
+$menu_antes=$partes[0];
+$indice_antes=$partes[1];
+
 function setOpcao(&$opcoes,$sessao,$nome,$codigo){
-	$indice=count($opcoes[$sessao]);
-	$opcoes[$sessao][$indice][0] = $nome;
-	$opcoes[$sessao][$indice][1] = $codigo;
+	$indice_adicionar=count($opcoes[$sessao]);
+	$opcoes[$sessao][$indice_adicionar][0] = $nome;
+	$opcoes[$sessao][$indice_adicionar][1] = $codigo;
 }
 
 $opcoes = array();
-setOpcao($opcoes,"inicio","Cozinha","c1");
-setOpcao($opcoes,"inicio","Quarto Casal","q1");
-setOpcao($opcoes,"inicio","Quarto Diana","q2");
-setOpcao($opcoes,"inicio","Quarto Lucas","q3");
-setOpcao($opcoes,"inicio","Banheiro Social","b1");
-setOpcao($opcoes,"inicio","Banheiro Suite Casal","b2");
+
+setOpcao($opcoes,"inicio","Casa","casa");
+
+setOpcao($opcoes,"casa","Cozinha","c1");
+setOpcao($opcoes,"casa","Quarto Casal","q1");
+setOpcao($opcoes,"casa","Quarto Diana","q2");
+setOpcao($opcoes,"casa","Quarto Lucas","q3");
+setOpcao($opcoes,"casa","Banheiro Social","b1");
+setOpcao($opcoes,"casa","Banheiro Suite Casal","b2");
 
 setOpcao($opcoes,"c1","Lampadas Setor 1","_acao_c1-lampadas-s1");
 setOpcao($opcoes,"c1","Lampadas Setor 2","_acao_c1-lampadas-s2");
@@ -31,7 +46,15 @@ setOpcao($opcoes,"q1","Lampadas","_acao_q1-lampadas");
 setOpcao($opcoes,"q1","Ar condicionado","_acao_q1-ar-condicionado");
 setOpcao($opcoes,"q1","TV","_acao_q1-tv");
 
-$titulo="Titulo do menu";
+setOpcao($opcoes,"q2","Google","_url_teste");
+
+echo "Teste<br/>";
+echo "Parametro: '$parametro'<br/>";
+echo "Menu: $menu, Indice: $indice<br/>";
+echo "Menu: $menu_antes, Indice: $indice_antes<br/>";
+
+$titulo = $opcoes[$menu_antes][$indice][0];
+
 ?>
 
 <tr> 
@@ -39,7 +62,7 @@ $titulo="Titulo do menu";
 		<table border=1 width="100%" >
 			<tr>
 				<td class="opcaoTitulo" width="3%" >
-					<img src="seta.png" width="40" height="40" onclick="loadContent('<?php echo "inicio"; ?>');">
+					<img src="seta.png" width="40" height="40" onclick="loadContent('<?php echo "inicio"; ?>','Automação Residencial');">
 				</td>
 				<td class="opcaoTitulo" width="94%" >
 					<?php echo $titulo; ?>
@@ -53,12 +76,18 @@ $titulo="Titulo do menu";
 
 <?php
 
-if( $menu != "_controle_tv_philco" ){
+if( $menu == "_url_teste" ){
+
+	$url = file_get_contents('http://www.google.com');
+
+	echo $url;
+	
+}else if( $menu != "_controle_tv_philco" ){
 
 	for($i=0;$i<count($opcoes[$menu]); $i++) {
 		$descricao=$opcoes[$menu][$i][0];
 		$id_menu=$opcoes[$menu][$i][1];
-		echo "<tr> <td class=\"opcao\" onclick=\"loadContent('$id_menu');\"> $descricao </td> </tr>";
+		echo "<tr> <td class=\"opcao\" onclick=\"loadContent('$parametro;$id_menu,$i');\"> $descricao </td> </tr>";
 	}
 }else{
 ?>
@@ -67,34 +96,34 @@ if( $menu != "_controle_tv_philco" ){
 	<td>
 		<table class="controle" >
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_um');">1</td>
-				<td class="controle" onclick="loadContent('_acao_dois');">2</td>
-				<td class="controle" onclick="loadContent('_acao_tres');">3</td>
+				<td class="controle" onclick="loadContent('_acao_um','Controle Remoto',);">1</td>
+				<td class="controle" onclick="loadContent('_acao_dois','Controle Remoto');">2</td>
+				<td class="controle" onclick="loadContent('_acao_tres','Controle Remoto');">3</td>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_quatro');">4</td>
-				<td class="controle" onclick="loadContent('_acao_cinco');">5</td>
-				<td class="controle" onclick="loadContent('_acao_seis');">6</td>
+				<td class="controle" onclick="loadContent('_acao_quatro','Controle Remoto');">4</td>
+				<td class="controle" onclick="loadContent('_acao_cinco','Controle Remoto');">5</td>
+				<td class="controle" onclick="loadContent('_acao_seis','Controle Remoto');">6</td>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_sete');">7</td>
-				<td class="controle" onclick="loadContent('_acao_oito');">8</td>
-				<td class="controle" onclick="loadContent('_acao_nove');">9</td>
+				<td class="controle" onclick="loadContent('_acao_sete','Controle Remoto');">7</td>
+				<td class="controle" onclick="loadContent('_acao_oito','Controle Remoto');">8</td>
+				<td class="controle" onclick="loadContent('_acao_nove','Controle Remoto');">9</td>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_mudo');">Mudo</td>
-				<td class="controle" onclick="loadContent('_acao_zero');">0</td>
-				<td class="controle" onclick="loadContent('_acao_voltar');">Voltar</td>
+				<td class="controle" onclick="loadContent('_acao_mudo','Controle Remoto');">Mudo</td>
+				<td class="controle" onclick="loadContent('_acao_zero','Controle Remoto');">0</td>
+				<td class="controle" onclick="loadContent('_acao_voltar','Controle Remoto');">Voltar</td>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_volume_mais');">Vol +</td>
-				<td class="controle" onclick="loadContent('_acao_nada');">x</td>
-				<td class="controle" onclick="loadContent('_acao_canal_mais');">Canal +</td>
+				<td class="controle" onclick="loadContent('_acao_volume_mais','Controle Remoto');">Vol +</td>
+				<td class="controle" onclick="loadContent('_acao_nada','Controle Remoto');">x</td>
+				<td class="controle" onclick="loadContent('_acao_canal_mais','Controle Remoto');">Canal +</td>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_volume_menos');">Vol -</td>
-				<td class="controle" onclick="loadContent('_acao_nada');">x</td>
-				<td class="controle" onclick="loadContent('_acao_canal_menos');">Canal -</td>
+				<td class="controle" onclick="loadContent('_acao_volume_menos','Controle Remoto');">Vol -</td>
+				<td class="controle" onclick="loadContent('_acao_nada','Controle Remoto');">x</td>
+				<td class="controle" onclick="loadContent('_acao_canal_menos','Controle Remoto');">Canal -</td>
 			</tr>
 		</table>
 	</td>
