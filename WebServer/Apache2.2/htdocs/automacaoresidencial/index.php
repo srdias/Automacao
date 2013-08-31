@@ -33,7 +33,7 @@ function setTexto(texto) {
 </style>
 
 </head>
-<body  onload="loadContent('inicio,0')">
+<body onload="loadContent('inicio')">
 
 <div id="DivMenu"></div>
 

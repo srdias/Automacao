@@ -8,6 +8,10 @@ td:hover {
 	color: 000033;
 }
 
+a.linkCaminhoMenu{
+	font:0.5em arial,sans-serif;
+}
+
 td.opcaoTitulo
 {
 	font:3em arial,sans-serif;
