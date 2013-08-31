@@ -19,6 +19,9 @@ void setup()
   Serial.begin(9600);
   Serial.println("Iniciando o arduino...");
   irrecv.enableIRIn(); // Start the receiver
+  
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
 }
 
 // Dumps out the decode_results structure.
@@ -49,7 +52,7 @@ void dump(decode_results *results) {
     Serial.print(results->bits, DEC);
     Serial.println(" bits)");
   }
-
+/*
   Serial.print("Raw (");
   Serial.print(count, DEC);
   Serial.print("): ");
@@ -62,15 +65,39 @@ void dump(decode_results *results) {
     }
     Serial.print(" ");
   }
-
+*/
   Serial.println("");
 }
 
 
 void loop() {
+	
+	static int controleVerm=LOW;
+	static int controleVerd=LOW;
+	static long controleTempo=millis();
+	
   if (irrecv.decode(&results)) {
 //    Serial.println(results.value, HEX);
+	long codigo=results.value;
     dump(&results);
     irrecv.resume(); // Receive the next value
+	
+	if( codigo == 0x8054A76D ||  codigo == 0x8054276D ){
+		if(controleTempo<millis()){
+			controleVerm=(controleVerm==LOW)?HIGH:LOW;
+			digitalWrite(4, controleVerm); 
+			Serial.println("Troca de estado vermelho.");
+			controleTempo=millis()+500;
+		}
+	}
+	
+	if( codigo == 0x8054A76E ||  codigo == 0x8054276E ){
+		if(controleTempo<millis()){
+			controleVerd=(controleVerd==LOW)?HIGH:LOW;
+			digitalWrite(5, controleVerd); 
+			Serial.println("Troca de estado vermelho.");
+			controleTempo=millis()+500;
+		}
+	}
   }
 }
