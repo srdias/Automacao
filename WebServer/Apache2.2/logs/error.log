@@ -114,3 +114,68 @@ httpd.exe: Could not reliably determine the server's fully qualified domain name
 [Thu Aug 29 22:52:45 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/retornar.png
 [Thu Aug 29 23:07:56 2013] [error] [client 192.168.0.169] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico, referer: http://192.168.0.196/automacaoresidencial/
 [Thu Aug 29 23:17:14 2013] [error] [client 192.168.0.169] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico, referer: http://192.168.0.196/automacaoresidencial/
+[Fri Aug 30 17:40:21 2013] [error] [client 192.168.0.171] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico, referer: http://192.168.0.196/automacaoresidencial/
+[Fri Aug 30 17:40:55 2013] [error] [client 192.168.0.171] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico, referer: http://192.168.0.196/automacaoresidencial/
+[Fri Aug 30 17:49:58 2013] [error] [client 192.168.0.124] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico
+[Fri Aug 30 17:49:58 2013] [error] [client 192.168.0.124] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/apple-touch-icon-precomposed.png
+[Fri Aug 30 17:51:06 2013] [error] [client 192.168.0.124] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico
+[Fri Aug 30 17:51:06 2013] [error] [client 192.168.0.124] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/apple-touch-icon-precomposed.png
+[Fri Aug 30 17:52:52 2013] [error] [client 192.168.0.124] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico
+[Fri Aug 30 17:52:52 2013] [error] [client 192.168.0.124] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/apple-touch-icon-precomposed.png
+[Fri Aug 30 19:36:44 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/www.google.com.br, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:36:45 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresidencial/www.google.com.br, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/_layouts, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/_layouts, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/ScriptResource.axd, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/_layouts, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/ScriptResource.axd, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/WebResource.axd, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/_layouts, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:41 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library, referer: http://localhost/automacaoresidencial/teste02.php
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/favicon.ico
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/_layouts
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/_layouts
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/_layouts
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/_layouts
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/_layouts
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br
+[Fri Aug 30 19:40:42 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br
+[Fri Aug 30 19:40:43 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br
+[Fri Aug 30 19:40:43 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/pt-br
+[Fri Aug 30 19:40:43 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library
+[Fri Aug 30 19:40:43 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library
+[Fri Aug 30 19:40:43 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library
+[Fri Aug 30 19:40:43 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/Style Library
+[Fri Aug 30 19:45:32 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/images, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:45:32 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/textinputassistant, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:45:32 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/images, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:45:32 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/xjs, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:45:39 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/textinputassistant, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:45:39 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/images, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:45:39 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/images, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:45:39 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/xjs, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:46:12 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/textinputassistant, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:46:12 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/images, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:46:12 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/xjs, referer: http://localhost/automacaoresidencial/
+[Fri Aug 30 19:46:12 2013] [error] [client 127.0.0.1] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/images, referer: http://localhost/automacaoresidencial/
+[Sat Aug 31 16:28:53 2013] [error] [client 192.168.0.166] File does not exist: C:/Automacao.git/WebServer/Apache2.2/htdocs/automacaoresicial
