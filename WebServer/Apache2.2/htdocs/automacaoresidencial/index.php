@@ -12,14 +12,13 @@ session_start();
 <script type="text/javascript"  language="javascript">
 
 function loadContent(parametro) {
+	var endereco="menuAction.php?parametro=" + parametro;
+	$("#DivMenu").load(endereco);
+}
 
-	var endereco="teste01.php?parametro=" + parametro;
-
-	if( parametro.substring(0, 6) == "_acao_"){
-		alert(parametro);
-	}else{
-		$("#DivMenu").load(endereco);
-	}
+function loadAcao(parametro) {
+	var endereco="menuActionAcao.php?parametro=" + parametro;
+	$("#DivAcao").load(endereco);
 }
 
 function setTexto(texto) {

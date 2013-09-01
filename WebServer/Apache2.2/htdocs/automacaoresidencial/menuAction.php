@@ -1,4 +1,4 @@
-
+	
 <?php
 
 if (!empty($_GET['parametro'])){
@@ -14,8 +14,21 @@ function setOpcao(&$opcoes,$sessao,$nome,$codigo){
 	$opcoes[$sessao][$codigo][1] = $codigo;
 }
 
+function acaoLink($parametro,$id_menu){
+	if( substr($id_menu,0,6) == "_acao_" ){
+		$retorno = "loadAcao('$id_menu')";
+	}else{
+		$retorno = "loadContent('$parametro;$id_menu')";
+	}
+	return $retorno;
+}
+
 function myLink($descricao,$opcoes_menu,$parametro_retorno){
 	return "<a class=\"linkCaminhoMenu\" href=\"#\" onclick=\"loadContent('$parametro_retorno')\"> $descricao</a>";
+}
+
+function myButtonControleRemoto($texto,$acao){
+	echo "<td class=\"controle\" onclick=\"" . acaoLink($parametro,$acao) . ";\">$texto</td>";
 }
 
 $opcoes = array();
@@ -34,7 +47,7 @@ setOpcao($opcoes,"c1","Lampadas Setor 2","_acao_c1-lampadas-s2");
 setOpcao($opcoes,"c1","Micro ondas","_acao_c1-micro-ondas");
 setOpcao($opcoes,"c1","TV","_controle_tv_philco");
 
-setOpcao($opcoes,"q1","Lampadas","_acao_q1-lampadas");
+setOpcao($opcoes,"q1","Lampadas","_acao_rele_q1-lampadas");
 setOpcao($opcoes,"q1","Ar condicionado","_acao_q1-ar-condicionado");
 setOpcao($opcoes,"q1","TV","_acao_q1-tv");
 
@@ -93,6 +106,7 @@ $titulo = $opcoes[$menu_antes][$menu][0];
 				</td>
 				<td class="opcaoTitulo" width="94%" >
 					<?php echo "$titulo<br>$caminho" ?>
+					<div id="DivAcao"></div>
 				</td>
 				<td class="opcaoTitulo" width="3%" >
 				</td>
@@ -101,9 +115,12 @@ $titulo = $opcoes[$menu_antes][$menu][0];
 	</td>
 </tr>
 
-<?php
 
-if( $menu == "_url_teste" ){
+<?php
+//echo "acaorele:" . substr($menu,0,10) . ";";
+if( substr($menu,0,10) == "_acao_rele" ){
+	echo "teste da acao do rele";
+}else if( $menu == "_url_teste" ){
 
 	$url = file_get_contents('http://www.google.com');
 
@@ -114,7 +131,8 @@ if( $menu == "_url_teste" ){
 	foreach ($opcoes[$menu] as $i){
 		$descricao=$i[0];
 		$id_menu=$i[1];
-		echo "<tr> <td class=\"opcao\" onclick=\"loadContent('$parametro;$id_menu');\"> $descricao </td> </tr>";
+		$acao=acaoLink($parametro,$id_menu);
+		echo "<tr> <td class=\"opcao\" onclick=\"$acao;\"> $descricao </td> </tr>";
 	}
 }else{
 ?>
@@ -123,34 +141,40 @@ if( $menu == "_url_teste" ){
 	<td>
 		<table class="controle" >
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_um');">1</td>
-				<td class="controle" onclick="loadContent('_acao_dois');">2</td>
-				<td class="controle" onclick="loadContent('_acao_tres');">3</td>
+				<?php myButtonControleRemoto("1","_acao_um");
+				      myButtonControleRemoto("2","_acao_dois");
+				      myButtonControleRemoto("3","_acao_tres");
+				?>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_quatro');">4</td>
-				<td class="controle" onclick="loadContent('_acao_cinco');">5</td>
-				<td class="controle" onclick="loadContent('_acao_seis');">6</td>
+				<?php myButtonControleRemoto("4","_acao_quatro");
+				      myButtonControleRemoto("5","_acao_cinco");
+				      myButtonControleRemoto("6","_acao_seis");
+				?>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_sete');">7</td>
-				<td class="controle" onclick="loadContent('_acao_oito');">8</td>
-				<td class="controle" onclick="loadContent('_acao_nove');">9</td>
+				<?php myButtonControleRemoto("7","_acao_sete");
+				      myButtonControleRemoto("8","_acao_oito");
+				      myButtonControleRemoto("9","_acao_nove");
+				?>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_mudo');">Mudo</td>
-				<td class="controle" onclick="loadContent('_acao_zero');">0</td>
-				<td class="controle" onclick="loadContent('_acao_voltar');">Voltar</td>
+				<?php myButtonControleRemoto("Mudo","_acao_mudo");
+				      myButtonControleRemoto("0","_acao_zero");
+				      myButtonControleRemoto("Voltar","_acao_voltar");
+				?>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_volume_mais');">Vol +</td>
-				<td class="controle" onclick="loadContent('_acao_nada');">x</td>
-				<td class="controle" onclick="loadContent('_acao_canal_mais');">Canal +</td>
+				<?php myButtonControleRemoto("Vol +","_acao_volume_mais");
+				      myButtonControleRemoto("","_acao_nada");
+				      myButtonControleRemoto("Canal +","_acao_canal_mais");
+				?>
 			</tr>
 			<tr>
-				<td class="controle" onclick="loadContent('_acao_volume_menos');">Vol -</td>
-				<td class="controle" onclick="loadContent('_acao_nada');">x</td>
-				<td class="controle" onclick="loadContent('_acao_canal_menos');">Canal -</td>
+				<?php myButtonControleRemoto("Vol -","_acao_volume_menos");
+				      myButtonControleRemoto("","_acao_nada");
+				      myButtonControleRemoto("Canal -","_acao_canal_menos");
+				?>
 			</tr>
 		</table>
 	</td>
